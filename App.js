@@ -51,7 +51,6 @@ Ext.define('CustomApp', {
                 console.log('feature ', feature.get('FormattedID'), 'scheduled for ', feature.get('Release')._refObjectName, feature.get('Release')._ref);
                 that._releasesWithFeatures.push(feature.get('Release'))
             });
-            console.log('releases with features', that._releasesWithFeatures);
             that._makeBoard();
         }
         else{
@@ -70,7 +69,6 @@ Ext.define('CustomApp', {
         });
     
         this._uniqueColumns = _.uniq(columns, 'value');
-        console.log(this._uniqueColumns);
             
             var cardBoard = {
                 xtype: 'rallycardboard',
@@ -78,9 +76,6 @@ Ext.define('CustomApp', {
                 types: ['PortfolioItem/Feature'],
                 attribute: 'Release',
                 fieldToDisplay: 'Release',
-                cardConfig: {
-                    fields: []
-                },
                 columns: this._uniqueColumns           
             };
     
@@ -99,11 +94,8 @@ Ext.define('CustomApp', {
                 that._additionalColumns.push({value: releaseRef, columnHeaderConfig: {headerTpl: '{release}', headerData: {release: releaseName}}});
             });
         }
-        console.log(that._additionalColumns);
         expandedColumns =  _.union(that._uniqueColumns, that._additionalColumns);
-        console.log('expandedColumns',expandedColumns);
         this._updatedColumns = _.uniq(expandedColumns, 'value');
-        console.log('this._updatedColumns',this._updatedColumns);
         this._updateBoard();
         
         
@@ -120,9 +112,6 @@ Ext.define('CustomApp', {
             types: ['PortfolioItem/Feature'],
             attribute: 'Release',
             fieldToDisplay: 'Release',
-            cardConfig: {
-                fields: []
-            },
             columns: that._updatedColumns,            
         };
 

@@ -3,7 +3,7 @@ Feature Board by Release
 
 ## Overview
 The board columns are based on releases that have features scheduled.
-To add a column or columns for release(s) that have no festures currently scheduled select a release from the mulitpicker.
+To add a column or columns for release(s) that have no features currently scheduled select a release from the mulitpicker.
 
 ![](pic.png)
 
